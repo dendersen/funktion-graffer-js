@@ -8,16 +8,15 @@ function setup() {
   line(width-(width/40), height/2, (width/40), height/2)
   y=-height/2
   x=-width/2
-  pointMove()
-  factorial(6)
 }
 
 var x = 0
 var y = 30
-var LI = 4
+var LI = 3
 function draw() {
-  if(frameRate()<55){
-    print(frameRate())
+  for(let i = 0; i<1000; i++){
+  pointDraw()
+  pointMove()
   }
 }
 
@@ -33,7 +32,6 @@ function pointDraw(){ //makes a point showing where is currently being drawn
   point(width/2,-y+height/2)
   strokeWeight(LI)
   stroke(0)
-  pointMove()
 }
 
 let colR = 255
@@ -45,7 +43,6 @@ let offset = density
 let runNumber = 0
 
 function pointMove(y){
-  pointDraw()
   if(runNumber>10){
     if(x<width/2){
       x+=(density)/(runNumber*100)
@@ -111,5 +108,6 @@ function pointMove(y){
 
 function funk(){
   let z =(x/100)
-  y=(Math.sqrt(((Math.cos(z*Math.PI)/Math.sin(z))/Math.tan(z*z))))+z*100
+  //y=(Math.sqrt(((Math.cos(z*Math.PI)/Math.sin(z))/Math.tan(z*z))))+z*100
+  y=Math.tan(z)*100*(Math.sin(z))/100
 }
