@@ -10,19 +10,22 @@ function setup() {
   x=-width/2
 }
 
+var go = true
+var runn = true
 var x = 0
 var y = 30
 var LI = 3
 function draw() {
-  for(let i = 0; i<1000; i++){
-  pointDraw()
-  pointMove()
+  if(runn){
+    go = true
+    runn = false
+    begin()
   }
 }
 
 function pointDraw(){ //makes a point showing where is currently being drawn
   stroke(255)
-  strokeWeight(LI-1)
+  strokeWeight(1)
   point(x+width/2,-y+height/2)
   
   //draws lines on x and y for drawn point
@@ -42,10 +45,10 @@ let density = 100
 let offset = density
 let runNumber = 0
 
-function pointMove(y){
+function pointMove(){
   if(runNumber>10){
     if(x<width/2){
-      x+=(density)/(runNumber*100)
+      x+=(density)/(runNumber*3000)
     }else{
       offset += density/20
       if(offset>(density*1.5)){
@@ -104,10 +107,17 @@ function pointMove(y){
     }
   }
   funk()
+  pointDraw()
 }
 
 function funk(){
   let z =(x/100)
   //y=(Math.sqrt(((Math.cos(z*Math.PI)/Math.sin(z))/Math.tan(z*z))))+z*100
-  y=Math.tan(z)*100*(Math.sin(z))/100
+  y=Math.tan(z)*100*(Math.sin(z))/10000
+}
+
+function begin(){
+  while(go){
+    pointDraw()
+  }
 }
