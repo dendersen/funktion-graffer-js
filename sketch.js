@@ -9,6 +9,7 @@ function setup() {
   y=-height/2
   x=-width/2
   pointMove()
+  factorial(6)
 }
 
 var x = 0
