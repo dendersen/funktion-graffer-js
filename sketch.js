@@ -8,6 +8,7 @@ function setup() {
   line(width-(width/40), height/2, (width/40), height/2)
   y=-height/2
   x=-width/2
+  firstY()
 }
 
 var go = true
@@ -16,10 +17,9 @@ var x = 0
 var y = 30
 var LI = 3
 function draw() {
-  if(runn){
-    go = true
-    runn = false
-    begin()
+  for(let i = 0; i<1000; i++){
+  pointDraw()
+  pointMove()
   }
 }
 
@@ -27,7 +27,7 @@ function pointDraw(){ //makes a point showing where is currently being drawn
   stroke(255)
   strokeWeight(1)
   point(x+width/2,-y+height/2)
-  
+
   //draws lines on x and y for drawn point
   stroke(colR, colG, colB)
   strokeWeight(LI-2.5) 
@@ -44,17 +44,26 @@ let action = 0
 let density = 100
 let offset = density
 let runNumber = 0
+let yONE = 0
+
+function firstY(){
+  let i = -width/2
+  while(funk(i) < -height/2){
+    yONE = i+1
+    i++
+  }
+}
 
 function pointMove(){
   if(runNumber>10){
     if(x<width/2){
-      x+=(density)/(runNumber*3000)
+      x+=(density)/(runNumber*50)
     }else{
       offset += density/20
       if(offset>(density*1.5)){
         offset = (density/((offset*5/8)))/8
       }
-      x=-(height/2+offset)
+      x=-(width/2-((runNumber)/runNumber-1))-yONE
       runNumber++
       print(runNumber)
       if(action<256) {
@@ -106,18 +115,15 @@ function pointMove(){
       }
     }
   }
-  funk()
-  pointDraw()
+  y = funk(x)
 }
 
-function funk(){
-  let z =(x/100)
-  //y=(Math.sqrt(((Math.cos(z*Math.PI)/Math.sin(z))/Math.tan(z*z))))+z*100
-  y=Math.tan(z)*100*(Math.sin(z))/10000
-}
-
-function begin(){
-  while(go){
-    pointDraw()
-  }
+function funk(z){
+  let result
+  z = z/5
+  //result=(Math.sqrt(((Math.cos(z*Math.PI)/Math.sin(z))/Math.tan(z*z))))+z*100
+  //result=Math.tan(z)*10*(Math.sin(z))
+  result = z*20
+  
+  return(result)
 }
