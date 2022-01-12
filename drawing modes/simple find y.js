@@ -4,7 +4,7 @@ function pointDraw(){ //makes a point showing where is currently being drawn
   stroke(255)
   strokeWeight(1)
   point(x+width/2,-y+height/2)
-
+  
   //draws lines on x and y for drawn point
   stroke(colR, colG, colB)
   point(x+width/2,height/2)
@@ -14,54 +14,44 @@ function pointDraw(){ //makes a point showing where is currently being drawn
 }
 
 function pointMove(){
-  if(runNumber>10){
-    if(x<width/2){
-      x+=width/(runNumber*density*10)
+  if(x<width/2){
+    if(runNumber>20){
+    x+=width/(runNumber*density*20)
     }else{
-      x=-(height/2+1)-yONE
-      actionControl()
+      x+=width/((runNumber/2)*(density*2))
     }
   }else{
-    if(x<width/2){
-      x+=width/(runNumber*density)
-    }else{
-      x=-(height/2+1)-yONE
-      actionControl()
-    }
+    x=-(width/2)-yONE
+    colorControl()
   }
-  y = funk(x)
+  y = simpleFunk(x,true,true,true)
 }
 
-function actionControl() {
-  runNumber++
-  print(runNumber)
-  if (runNumber > 9) {
-    x = 0 - (width / 2)
+function simpleFunk(z,DNT0,DNT1,DNT2){
+  if(DNT0 == null){
+    let DNT0=true
   }
-  if (action < 256) {
-    colR -= 32
-    colB += 32
-    action += 32
-  } else if (action < 512) {
-    colB -= 32
-    colG += 32
-    action += 32
-  } else if (action < 768) {
-    colG -= 32
-    colR += 32
-    action += 32
-  } else {
-    action = 0
-    pointMove()
+  if(DNT1 == null){
+    let DNT1=true
   }
-}
+  if(DNT2 == null){
+    let DNT2=true
+  }
 
-function funk(z){
   let result
-  z = z/5
-  //result=(Math.sqrt(((Math.cos(z*Math.PI)/Math.sin(z))/Math.tan(z*z))))+z*100
+  //z = z
+  result=(Math.sqrt(((Math.cos(z*Math.PI)/Math.sin(z))/Math.tan(z*z))))*
+  (height/50)-(height/2)+(height/40)
   //result=Math.tan(z)*10*(Math.sin(z))
-  result = z*20
-  
+  //result = z
+  if(DNT0 && DNT1 && DNT2) {
+    simpleFunk(result,false,true,true)
+  }
+  if(DNT1 && DNT2) {
+    simpleFunk(result,false,false,true)
+  }
+  if(DNT2) {
+    simpleFunk(result,false,false,false)
+  }
   return(result)
 }

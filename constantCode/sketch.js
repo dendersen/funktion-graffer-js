@@ -21,21 +21,49 @@ let colG = 0
 let colB = 0
 
 let action = 0
-let density = 10
+let density = 100
 let runNumber = 0
 let yONE = 0
 
 function draw() {
-	for(let i = 0; i<1; i++){
+	for(let i = 0; i<(40*runNumber+1)*(width/2500); i++){
 	pointDraw()
 	pointMove()
 	}
 }
 
 function firstY(){
-	let i = -width/2
-	while(funk(i) < -height/2){
-	yONE = i+1
-	i++
+	yONE = 0
+	while(funk(yONE-(width/2)) > -height/2){ 
+		yONE++
 	}
+}
+let operation ="simpel"
+
+function funk(){
+	switch(operation){
+		case "simpel":
+		simpleFunk()
+	}
+}
+
+function colorControl() {
+  runNumber++
+  print(runNumber)
+  if (action < 256) {
+    colR -= 32
+    colB += 32
+    action += 32
+  } else if (action < 512) {
+    colB -= 32
+    colG += 32
+    action += 32
+  } else if (action < 768) {
+    colG -= 32
+    colR += 32
+    action += 32
+  } else {
+    action = 0
+    pointMove()
+  }
 }
