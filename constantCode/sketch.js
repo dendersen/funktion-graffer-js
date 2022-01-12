@@ -21,13 +21,12 @@ let colG = 0
 let colB = 0
 
 let action = 0
-let density = 100
-let offset = density
+let density = 10
 let runNumber = 0
 let yONE = 0
 
 function draw() {
-	for(let i = 0; i<1000; i++){
+	for(let i = 0; i<1; i++){
 	pointDraw()
 	pointMove()
 	}
