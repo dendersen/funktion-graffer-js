@@ -1,6 +1,6 @@
 
 
-function pointDraw(){ //makes a point showing where is currently being drawn
+function pointDrawSimple(){ //makes a point showing where is currently being drawn
   stroke(255)
   strokeWeight(1)
   point(x+width/2,-y+height/2)
@@ -13,7 +13,7 @@ function pointDraw(){ //makes a point showing where is currently being drawn
   stroke(0)
 }
 
-function pointMove(){
+function pointMoveSimple(){
   if(x<width/2){
     if(runNumber>20){
     x+=width/(runNumber*density*20)

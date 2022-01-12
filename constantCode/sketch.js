@@ -26,9 +26,20 @@ let runNumber = 0
 let yONE = 0
 
 function draw() {
-	for(let i = 0; i<(40*runNumber+1)*(width/2500); i++){
-	pointDraw()
-	pointMove()
+	multy()
+}
+
+function simple(){
+	for(let i = 0; i<(10*runNumber+1)*(width/2500); i++){
+		pointDrawSimple()
+		pointMoveSimple()
+	}
+}
+
+function multy(){
+	for (let i = 0; i<(10*runNumber+1)*(width/2500); i++){
+		pointDrawMulty()
+		pointMoveMulty()
 	}
 }
 
@@ -38,12 +49,15 @@ function firstY(){
 		yONE++
 	}
 }
-let operation ="simpel"
+let operation ="multy"
 
 function funk(){
 	switch(operation){
 		case "simpel":
-		simpleFunk()
+			simpleFunk()
+		break;
+		case "multy":
+			multyFunk()
 	}
 }
 
@@ -64,6 +78,5 @@ function colorControl() {
     action += 32
   } else {
     action = 0
-    pointMove()
   }
 }
