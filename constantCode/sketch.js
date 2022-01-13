@@ -24,20 +24,21 @@ let action = 0
 let density = 100
 let runNumber = 0
 let yONE = 0
+let reruns = 1
 
 function draw() {
-	multy()
+	simple()
 }
 
 function simple(){
-	for(let i = 0; i<(10*runNumber+1)*(width/2500); i++){
+	for(let i = 0; i<((10*runNumber+1)*(width/2500))*reruns; i++){
 		pointDrawSimple()
 		pointMoveSimple()
 	}
 }
 
 function multy(){
-	for (let i = 0; i<(10*runNumber+1)*(width/2500); i++){
+	for (let i = 0; i<((10*runNumber+1)*(width/2500))*reruns; i++){
 		pointDrawMulty()
 		pointMoveMulty()
 	}
@@ -49,7 +50,7 @@ function firstY(){
 		yONE++
 	}
 }
-let operation ="multy"
+let operation ="simple"
 
 function funk(CC){
 	switch(operation){

@@ -34,8 +34,8 @@ function multyFunk(z,Positive){
   //t=+-sqrt(-x^2+2*X*centerX+r^2-x^2) "runs as both positive and negative"
   //T=centerY "a constant not affected by positivie negative change"
   
-  t=Math.sqrt(Math.pow(z,2)+2*z*0+20)*10
-  T=0
+  t=Math.sqrt(-Math.pow(z,2)+2*z*100+20000)
+  T=100
   
   if(Positive) return T+t
   else return T-t
