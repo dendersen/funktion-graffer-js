@@ -51,13 +51,13 @@ function firstY(){
 }
 let operation ="multy"
 
-function funk(){
+function funk(CC){
 	switch(operation){
 		case "simpel":
-			simpleFunk()
+			simpleFunk(CC)
 		break;
 		case "multy":
-			multyFunk()
+			multyFunk(CC)
 	}
 }
 

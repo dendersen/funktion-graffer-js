@@ -24,7 +24,7 @@ function pointMoveSimple(){
     x=-(width/2)-yONE
     colorControl()
   }
-  y = simpleFunk(x,true,true,true)
+  y = simpleFunk(x)
 }
 
 function simpleFunk(z,DNT0,DNT1,DNT2){
