@@ -9,11 +9,10 @@ function setup() {
 	line(width-(width/40), height/2, (width/40), height/2)
 	y=-height/2
 	x=-width/2
-	firstY()
 }
 
-var x = 0
-var y = 30
+var xx = 0
+var yy = 30
 var LI = 3
 
 let colR = 255
@@ -26,45 +25,29 @@ let runNumber = 0
 let yONE = 0
 let reruns = 3
 
-//const funkStyle
+const funkStyle = []
 
 function draw() {
-	// for(let i = 0; i>funkNum;i++){
-	// 	funkStyle[i].funker(i)
-	// }
-	simple()
-}
-
-function simple(){
-	for(let i = 0; i<((10*runNumber+1)*(width/2500))*reruns; i++){
-		pointDrawSimple()
-		pointMoveSimple()
+	for(let i = 0; i<(((10*runNumber+1)*(width/2500))*reruns)/funkStyle.length; i++){
+		for(let i = 0; i<funkStyle.length; i++){
+			PointDrawSimple(xx,SimpleFunk(xx))
+			//pointDrawMulty(xx,multyFunk(xx))
+			pointMove()
+		}
 	}
 }
 
-function multy(){
-	for (let i = 0; i<((10*runNumber+1)*(width/2500))*reruns; i++){
-		pointDrawMulty()
-		pointMoveMulty()
-	}
-}
-
-function firstY(){
-	yONE = 0
-	while(funk(yONE-(width/2)) > -height/2){ 
-		yONE++
-	}
-}
-let operation ="simple"
-
-function funk(CC){
-	switch(operation){
-		case "simpel":
-			simpleFunk(CC)
-		break;
-		case "multy":
-			multyFunk(CC)
-	}
+function pointMove(){
+  if(x<width/2){
+    if(runNumber>20){
+    x+=width/(runNumber*density*40)
+    }else{
+      x+=width/((runNumber/2)*(density*2))
+    }
+  }else{
+    x=-width/2
+    colorControl()
+  }
 }
 
 function colorControl() {

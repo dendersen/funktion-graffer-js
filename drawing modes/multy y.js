@@ -1,16 +1,7 @@
-function pointMoveMulty(){
-  if(x<width/2){
-    x+=width/(runNumber*density)
-  }else{
-    x=-width/2+yONE
-    colorControl()
-  }
-}
-
-function pointDrawMulty(){
+function PointDrawMulty(x,y){
   let TT =true
   for(let i  = 0; i!=2;i++){
-    y = multyFunk(x,TT)
+    y = this.Funk(x,TT)
     //draws lines on x and y for drawn point
     stroke(colR, colG, colB)
     point(x+width/2,height/2)
@@ -25,9 +16,7 @@ function pointDrawMulty(){
   }
 }
 
-
-
-function multyFunk(z,Positive){
+function MultyFunk(z,Positive){
   let t
   let T
   
@@ -40,4 +29,3 @@ function multyFunk(z,Positive){
   if(Positive) return T+t
   else return T-t
 }
-Math.sq
