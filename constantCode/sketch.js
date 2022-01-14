@@ -24,9 +24,14 @@ let action = 0
 let density = 100
 let runNumber = 0
 let yONE = 0
-let reruns = 1
+let reruns = 3
+
+//const funkStyle
 
 function draw() {
+	// for(let i = 0; i>funkNum;i++){
+	// 	funkStyle[i].funker(i)
+	// }
 	simple()
 }
 
