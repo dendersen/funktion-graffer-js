@@ -7,8 +7,8 @@
 4. go to sketch.js
 5. in the function fill operation add two things:
   
-1. the operation array must have the string "simple"
-2. the calculate array must have the name of your function WITHOUT ()
+- the operation array must have the string "simple"
+- the calculate array must have the name of your function WITHOUT ()
   
 # circkles or other complex lines
 these have precisly 2 or 0 y values per x value
