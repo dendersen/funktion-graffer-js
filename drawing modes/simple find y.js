@@ -1,6 +1,6 @@
 
 
-function pointDrawSimple(){ //makes a point showing where is currently being drawn
+function pointDraw(){ //makes a point showing where is currently being drawn
   stroke(255)
   strokeWeight(1)
   point(x+width/2,-y+height/2)
@@ -13,7 +13,7 @@ function pointDrawSimple(){ //makes a point showing where is currently being dra
   stroke(0)
 }
 
-function pointMoveSimple(){
+function pointMove(){
   if(x<width/2){
     if(runNumber>20){
     x+=width/(runNumber*density*40)
@@ -21,20 +21,19 @@ function pointMoveSimple(){
       x+=width/((runNumber/2)*(density*2))
     }
   }else{
-    x=-(width/2)-yONE
+    x=-(width/2)
     colorControl()
   }
-  y = simpleFunk(x)
+  y = SimpleFunk(x)
 }
 
-function simpleFunk(z){
+function SimpleFunk(CC){
 
-  let result
-  z = z/10
-  //result=(Math.sqrt(((Math.cos(z*Math.PI)/Math.sin(z))/Math.tan(z*z))))*(height/50)-(height/2)+(height/40)
-  result=sMath.sqrt(Math.tan(z)*10*(Math.sin(z)))
-  //result = z 
-  //result = d(z)
+  this.z = CC/10
+  //result=(Math.sqrt(((Math.cos(this.z*Math.PI)/Math.sin(this.z))/Math.tan(this.z*this.z))))*(height/50)-(height/2)+(height/40)
+  result=Math.sqrt(Math.tan(this.z)*10*(Math.sin(this.z)))
+  //result = this.z 
+  //result = d(this.z)
 
   return(result)
 }
