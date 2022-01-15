@@ -13,7 +13,7 @@ function pointDraw(){ //makes a point showing where is currently being drawn
   stroke(0)
 }
 
-function pointMove(){
+function pointMove(id){
   if(x<width/2){
     if(runNumber>20){
     x+=width/(runNumber*density*40)
@@ -24,12 +24,12 @@ function pointMove(){
     x=-(width/2)
     colorControl()
   }
-  y = SimpleFunk(x)
+  y = calculate[id]
 }
 
-function SimpleFunk(CC){
+function SimpleFunk(){
 
-  this.z = CC/10
+  this.z = x/10
   //result=(Math.sqrt(((Math.cos(this.z*Math.PI)/Math.sin(this.z))/Math.tan(this.z*this.z))))*(height/50)-(height/2)+(height/40)
   result=Math.sqrt(Math.tan(this.z)*10*(Math.sin(this.z)))
   //result = this.z 

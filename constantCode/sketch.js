@@ -11,8 +11,8 @@ function setup() {
 	x=-width/2
 }
 
-var x = 0
-var y = 30
+var x
+var y
 var LI = 3
 
 let colR = 255
@@ -27,28 +27,37 @@ let reruns = 3
 //const funkStyle
 
 function draw() {
-	// for(let i = 0; i>funkNum;i++){
-	// 	funkStyle[i].funker(i)
-	// }
+	for(let i = 0; i>operation.length; i++){
+		if (operation [i] == "multy"){
+			multy(i)
+		}else{
+			simple(i)
+		}
+	}
 	simple()
 }
 
 function simple(id){
 	for(let i = 0; i<((10*runNumber+1)*(width/2500))*reruns; i++){
-		pointDraw()
 		pointMove()
+		pointDraw(id)
 	}
 }
 
 function multy(id){
 	for (let i = 0; i<((10*runNumber+1)*(width/2500))*reruns; i++){
-		pointDrawMulty()
 		pointMove()
+		pointDrawMulty(id)
 	}
 }
 
-const operation =[]
+const operation = [] //"simple" || "multy"
+const calculate = [] //a funktion object that returns y
 
+operation [0] = "simple"
+operation [1] = "multy"
+calculate [0] = new SimpleFunk()
+calculate [1] = new MultyFunk()
 
 function colorControl() {
   runNumber++
