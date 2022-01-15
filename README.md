@@ -17,7 +17,7 @@ this variable is a boolian that switches between the 2 results for the y axis
 # tips:
 1. it is a good idea to make a local variable when x is used but it is not required
 2. you can use functions from refractions to do recursive math operations, but a lot of them are available with Math.
-
+ 
 https://dendersen.github.io/funktion-graffer-js/
 
 
