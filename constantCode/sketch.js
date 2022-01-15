@@ -9,7 +9,6 @@ function setup() {
 	line(width-(width/40), height/2, (width/40), height/2)
 	y=-height/2
 	x=-width/2
-	firstY()
 }
 
 var x = 0
@@ -23,7 +22,6 @@ let colB = 0
 let action = 0
 let density = 100
 let runNumber = 0
-let yONE = 0
 let reruns = 3
 
 //const funkStyle
@@ -35,37 +33,22 @@ function draw() {
 	simple()
 }
 
-function simple(){
+function simple(id){
 	for(let i = 0; i<((10*runNumber+1)*(width/2500))*reruns; i++){
-		pointDrawSimple()
-		pointMoveSimple()
+		pointDraw()
+		pointMove()
 	}
 }
 
-function multy(){
+function multy(id){
 	for (let i = 0; i<((10*runNumber+1)*(width/2500))*reruns; i++){
 		pointDrawMulty()
-		pointMoveMulty()
+		pointMove()
 	}
 }
 
-function firstY(){
-	yONE = 0
-	while(funk(yONE-(width/2)) > -height/2){ 
-		yONE++
-	}
-}
-let operation ="simple"
+const operation =[]
 
-function funk(CC){
-	switch(operation){
-		case "simpel":
-			simpleFunk(CC)
-		break;
-		case "multy":
-			multyFunk(CC)
-	}
-}
 
 function colorControl() {
   runNumber++
