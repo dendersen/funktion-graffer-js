@@ -10,7 +10,8 @@
 a. the operation array must have the string "simple"
 b. the calculate array must have the name of your function WITHOUT ()
   
-# circkles or other complex lines that have precisly 2 or 0 y values per x value
+# circkles or other complex lines
+these have precisly 2 or 0 y values per x value
 1. in the function you must now have 2 calculatins and 1 variable
 2. this variable is a boolian that switches between the 2 results for the y axis 
   
