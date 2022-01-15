@@ -9,6 +9,7 @@ function setup() {
 	line(width-(width/40), height/2, (width/40), height/2)
 	y=-height/2
 	x=-width/2
+  fillOperations()
 }
 
 var x
@@ -20,44 +21,50 @@ let colG = 0
 let colB = 0
 
 let action = 0
-let density = 100
+let density = 1000
 let runNumber = 0
 let reruns = 3
 
-//const funkStyle
-
 function draw() {
-	for(let i = 0; i>operation.length; i++){
+  for(let j = 0; j<500  ; j++){
+	for(let i = 0; i<operation.length; i++){
 		if (operation [i] == "multy"){
-			multy(i)
+      pointDrawMulty(i)
 		}else{
-			simple(i)
+      pointDraw(i,true)
 		}
 	}
-	simple()
-}
+  pointMove()
+}}
 
-function simple(id){
-	for(let i = 0; i<((10*runNumber+1)*(width/2500))*reruns; i++){
-		pointMove()
-		pointDraw(id)
-	}
-}
 
-function multy(id){
-	for (let i = 0; i<((10*runNumber+1)*(width/2500))*reruns; i++){
-		pointMove()
-		pointDrawMulty(id)
-	}
-}
 
 const operation = [] //"simple" || "multy"
 const calculate = [] //a funktion object that returns y
 
-operation [0] = "simple"
-operation [1] = "multy"
-calculate [0] = new SimpleFunk()
-calculate [1] = new MultyFunk()
+
+
+function fillOperations(){
+  operation [0] = "simple"
+  operation [1] = "multy"
+  operation [2] = operation [0]
+  operation [3] = operation [0]
+
+  calculate [0] = SimpleFunk;
+  calculate [1] = MultyFunk;
+  calculate [2] = SimpleFunk1;
+  calculate [3] = SimpleFunk2;
+  console.log("operations loaded", operation)
+}
+
+// function draw(){
+//   Test [3](5)
+// }
+// const Test = []
+// Test [3] = Test1
+// function Test1 (num){
+//   console.log ("running",num)
+// }
 
 function colorControl() {
   runNumber++
