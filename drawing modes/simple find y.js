@@ -2,7 +2,6 @@
 
 function pointDraw(id,CC){ //makes a point showing where is currently being drawn
   if(CC) y = calculate[id]()
-  stroke(255)
   strokeWeight(1)
   point(x+width/2,-y+height/2)
   
@@ -29,9 +28,9 @@ function pointMove(id){
 
 function SimpleFunk(){
 
-  z = x/10
+  z = x/30
   //result=(Math.sqrt(((Math.cos(z*Math.PI)/Math.sin(z))/Math.tan(z*z))))*(height/50)-(height/2)+(height/40)
-  result=Math.sqrt(Math.tan(z)*10*(Math.sin(z)))
+  result=Math.sqrt(Math.sqrt(Math.pow(Math.tan(z*z)*10*(Math.sin(z*z)),2)))
   //result = z 
   //result = d(z)
 
@@ -58,4 +57,11 @@ function SimpleFunk2(){
   //result = d(z)
 
   return(result)
+}
+
+function simpleFunk3(){
+  z=x/20
+  let result
+  result = 1/2*x+3
+  return (result) 
 }

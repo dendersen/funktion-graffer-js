@@ -21,39 +21,54 @@ let colG = 0
 let colB = 0
 
 let action = 0
-let density = 1000
+let density = 1
 let runNumber = 0
 let reruns = 3
 
 function draw() {
-  for(let j = 0; j<500  ; j++){
-	for(let i = 0; i<operation.length; i++){
-		if (operation [i] == "multy"){
-      pointDrawMulty(i)
-		}else{
-      pointDraw(i,true)
-		}
-	}
-  pointMove()
-}}
-
+  if(running){
+    for(let j = 0; j<100  ; j++){
+      for(let i = 0; i<operation.length; i++){
+        if (operation [i] == "multy"){
+          pointDrawMulty(i)
+        }else{
+          pointDraw(i,true)
+        }
+      }
+      pointMove()
+    }
+  }
+}
 
 
 const operation = [] //"simple" || "multy"
 const calculate = [] //a funktion object that returns y
 
-
+var running = true
 
 function fillOperations(){
-  operation [0] = "simple"
-  operation [1] = "multy"
-  operation [2] = operation [0]
-  operation [3] = operation [0]
+  operation [operation.length] = "multy"
+  calculate [calculate.length] = MultyFunk;
+  
+  operation [operation.length] = "simple"
+  calculate [calculate.length] = SimpleFunk;
 
-  calculate [0] = SimpleFunk;
-  calculate [1] = MultyFunk;
-  calculate [2] = SimpleFunk1;
-  calculate [3] = SimpleFunk2;
+  operation [operation.length] = "simple"
+  calculate [calculate.length] = SimpleFunk1;
+
+  operation [operation.length] = "simple"
+  calculate [calculate.length] = SimpleFunk2;
+
+  operation [operation.length] = "multy"
+  calculate [calculate.length] = multyFunk1
+
+  operation [operation.length] = "simple"
+  calculate [calculate.length] = simpleFunk3
+  
+  if (density > (density*2)/operation.length)  density = (density*2)/operation.length
+  else density = (density)/operation.length
+  reruns = reruns/(operation.length/2)
+
   console.log("operations loaded", operation)
 }
 
