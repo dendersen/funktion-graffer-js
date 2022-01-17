@@ -14,16 +14,16 @@ function setup() {
 
 var x
 var y
-var LI = 3
+var LI = 12 
 
 let colR = 255
 let colG = 0
 let colB = 0
 
 let action = 0
-let density = 1
+let density = 100
 let runNumber = 0
-let reruns = 3
+let reruns = 6
 
 function draw() {
   if(running){
@@ -47,27 +47,34 @@ const calculate = [] //a funktion object that returns y
 var running = true
 
 function fillOperations(){
-  operation [operation.length] = "multy"
-  calculate [calculate.length] = MultyFunk;
+  // operation [operation.length] = "multy"
+  // calculate [calculate.length] = MultyFunk;
+  
+  // operation [operation.length] = "simple"
+  // calculate [calculate.length] = SimpleFunk;
+
+  // operation [operation.length] = "simple"
+  // calculate [calculate.length] = SimpleFunk1;
+
+  // operation [operation.length] = "simple"
+  // calculate [calculate.length] = SimpleFunk2;
+
+  // operation [operation.length] = "multy"
+  // calculate [calculate.length] = multyFunk1
+
+  // operation [operation.length] = "simple"
+  // calculate [calculate.length] = simpleFunk3
   
   operation [operation.length] = "simple"
-  calculate [calculate.length] = SimpleFunk;
-
+  calculate [calculate.length] = sin1
   operation [operation.length] = "simple"
-  calculate [calculate.length] = SimpleFunk1;
-
+  calculate [calculate.length] = tan1
   operation [operation.length] = "simple"
-  calculate [calculate.length] = SimpleFunk2;
+  calculate [calculate.length] = cos1
 
-  operation [operation.length] = "multy"
-  calculate [calculate.length] = multyFunk1
-
-  operation [operation.length] = "simple"
-  calculate [calculate.length] = simpleFunk3
-  
-  if (density > (density*2)/operation.length)  density = (density*2)/operation.length
+  if (density > (density*3)/operation.length)  density = (density*3)/operation.length
   else density = (density)/operation.length
-  reruns = reruns/(operation.length/2)
+  reruns = reruns/(operation.length/3)
 
   console.log("operations loaded", operation)
 }

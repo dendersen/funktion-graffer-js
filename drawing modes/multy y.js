@@ -10,6 +10,7 @@ function pointDrawMulty(id){
 
 
 function MultyFunk(Positive){
+  stroke(200,10,100)
   let t
   let T
   z = x
@@ -28,7 +29,8 @@ function MultyFunk(Positive){
 function multyFunk1(CC){
   let t
   let T
-  let z = x/1000
+  let z = x/100
+  stroke(255,255,0)
 
   t=Math.sqrt(Math.sin(z)*10+Math.cos(z*z))*Math.tan(z+2)
   T=5

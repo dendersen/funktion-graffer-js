@@ -22,6 +22,7 @@ these have precisly 2 or 0 y values per x value
 2. you can use functions from refractions to do recursive math operations, but a lot of them are available with Math.
 3. there may not be an empty space in the operation or calculate array, the array possition has no meaning. as long as it starts at 0
 4. the lines already being calculated can be deleted and are only there to showcase the way it works
+5. a function should also contain a stroke (R,G,B) or a stroke (W) to choose the color of the line
  
 https://dendersen.github.io/funktion-graffer-js/
 
