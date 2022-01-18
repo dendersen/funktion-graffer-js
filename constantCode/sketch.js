@@ -1,6 +1,6 @@
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	createCanvas(windowWidth, windowHeight-1);
 	windowWidth -= 20
 	windowHeight -= 10
 	background(80)
@@ -21,13 +21,13 @@ let colG = 0
 let colB = 0
 
 let action = 0
-let density = 100
+let density = 50
 let runNumber = 0
 let reruns = 6
 
 function draw() {
   if(running){
-    for(let j = 0; j<100  ; j++){
+    for(let j = 0; j<50  ; j++){
       for(let i = 0; i<operation.length; i++){
         if (operation [i] == "multy"){
           pointDrawMulty(i)
