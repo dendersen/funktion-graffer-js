@@ -15,13 +15,13 @@ function pointDraw(id,CC){ //makes a point showing where is currently being draw
 
 function pointMove(id){
   if(x<width/2){
-    if(runNumber>20){
-    x+=width/(runNumber*density*30)
+    if(runNumber>30){
+    x+=width/(runNumber*density*(height/50))
     }else{
-      x+=width/((Math.pow(runNumber,2)*density))
+      x+=width/(runNumber*density*(height/500))
     }
   }else{
-    x=-(width/2)
+    x=-width/2
     colorControl()
   }
 }
@@ -68,23 +68,22 @@ function simpleFunk3(){
 }
 
 function sin1(){
-  stroke(175,12,59)
-  z=x/100
-  return (Math.sin(z)*100)
+  stroke(255,0,0)
+  z=x/(width/24)
+  return (Math.sin(z)*height/4)
 }
 
 function tan1(){
-  z=x/100
-  stroke(48,41,141)
-  return (Math.tan(z)*100)
+  stroke(0,255,0)
+  z=x/(width/24)
+  return (Math.tan(z)*height/4)
 }
 
 function cos1(){
-  stroke(123,123,0)
-  z=x/100
-  return (Math.cos(z)*100)
+  stroke(0,0,255)
+  z=x/(width/24)
+  return (Math.cos(z)*height/4)
 }
-
 function fibDraw(){
   stroke(255)
   z=(x+width/2)/300
