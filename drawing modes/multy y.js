@@ -37,3 +37,4 @@ function multyFunk1(CC){
   if(CC) return T+t
   else return t-T
 }
+

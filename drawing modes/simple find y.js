@@ -68,16 +68,25 @@ function simpleFunk3(){
 }
 
 function sin1(){
+  stroke(175,12,59)
   z=x/100
   return (Math.sin(z)*100)
 }
 
 function tan1(){
   z=x/100
+  stroke(48,41,141)
   return (Math.tan(z)*100)
 }
 
 function cos1(){
+  stroke(123,123,0)
   z=x/100
   return (Math.cos(z)*100)
+}
+
+function fibDraw(){
+  stroke(255)
+  z=(x+width/2)/300
+  return (fibcalc(z)*9-(height/2))
 }

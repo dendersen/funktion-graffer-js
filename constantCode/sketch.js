@@ -47,23 +47,23 @@ const calculate = [] //a funktion object that returns y
 var running = true
 
 function fillOperations(){
-  // operation [operation.length] = "multy"
-  // calculate [calculate.length] = MultyFunk;
+  operation [operation.length] = "multy"
+  calculate [calculate.length] = MultyFunk;
   
-  // operation [operation.length] = "simple"
-  // calculate [calculate.length] = SimpleFunk;
+  operation [operation.length] = "simple"
+  calculate [calculate.length] = SimpleFunk;
 
-  // operation [operation.length] = "simple"
-  // calculate [calculate.length] = SimpleFunk1;
+  operation [operation.length] = "simple"
+  calculate [calculate.length] = SimpleFunk1;
 
-  // operation [operation.length] = "simple"
-  // calculate [calculate.length] = SimpleFunk2;
+  operation [operation.length] = "simple"
+  calculate [calculate.length] = SimpleFunk2;
 
-  // operation [operation.length] = "multy"
-  // calculate [calculate.length] = multyFunk1
+  operation [operation.length] = "multy"
+  calculate [calculate.length] = multyFunk1
 
-  // operation [operation.length] = "simple"
-  // calculate [calculate.length] = simpleFunk3
+  operation [operation.length] = "simple"
+  calculate [calculate.length] = simpleFunk3
   
   operation [operation.length] = "simple"
   calculate [calculate.length] = sin1
@@ -71,6 +71,9 @@ function fillOperations(){
   calculate [calculate.length] = tan1
   operation [operation.length] = "simple"
   calculate [calculate.length] = cos1
+
+  operation [operation.length] = "simple"
+  calculate [calculate.length] = fibDraw
 
   if (density > (density*3)/operation.length)  density = (density*3)/operation.length
   else density = (density)/operation.length
