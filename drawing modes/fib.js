@@ -10,12 +10,12 @@ function wait(ms) {
   }
 }
 
-function fibcalc(NUM){
+function fibCalc(NUM){
   if(fib.length<=NUM){//close to accurate up to 80, then looses accuracy until 101 where it stops calculating
     fib [fib.length] = parseInt(parseInt(fib[fib.length-1]) + parseInt(fib[fib.length-2]))
     console.log(fib.length-1, fib[fib.length-1])
     wait (1)
-    fibcalc()
+    fibCalc()
     return(fib[fib.length-1])
   }else {return(fib[Math.floor(NUM)])}
 }

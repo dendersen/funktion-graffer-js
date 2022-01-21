@@ -27,7 +27,7 @@ let reruns = 6
 
 function draw() {
   if(running){
-    for(let j = 0; j<50  ; j++){
+    for(let j = 0; j<50*reruns  ; j++){
       for(let i = 0; i<operation.length; i++){
         if (operation [i] == "multy"){
           pointDrawMulty(i)
