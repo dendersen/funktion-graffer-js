@@ -86,6 +86,6 @@ function cos1(CC){
 }
 function fibDraw(){
   stroke(255)
-  z=(x+width/2)/300
-  return (fibCalc(z)*9-(height/2)+Math.cos(z*120)*20)
+  z=(x+width/2)/350
+  return (((fibCalc(z)*9-(height/2)+Math.cos(z*120)*20)/(z/10)))
 }

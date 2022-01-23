@@ -10,7 +10,10 @@ function setup() {
 	y=-height/2
 	x=-width/2
   fillOperations()
+  
 }
+
+
 
 var x
 var y
@@ -27,7 +30,7 @@ let reruns = 6
 
 function draw() {
   if(running){
-    for(let j = 0; j<50*reruns  ; j++){
+    for(let j = 0; j<reruns  ; j++){
       for(let i = 0; i<operation.length; i++){
         if (operation [i] == "multy"){
           pointDrawMulty(i)
@@ -75,10 +78,6 @@ function fillOperations(){
   operation [operation.length] = "simple"
   calculate [calculate.length] = fibDraw
 
-  if (density > (density*3)/operation.length)  density = (density*3)/operation.length
-  else density = (density)/operation.length
-  reruns = reruns/(operation.length/3)
-
   console.log("operations loaded", operation)
 }
 
@@ -109,4 +108,5 @@ function colorControl() {
   } else {
     action = 0
   }
+  density += 10
 }
