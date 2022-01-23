@@ -74,13 +74,18 @@ function sin1(){
 }
 
 function tan1(){
-  stroke(0,255,0)
+  stroke(0,255,255)
   z=x/(width/24)
   return (Math.tan(z)*height/4)
 }
 
-function cos1(){
+function cos1(CC){
   stroke(0,0,255)
   z=x/(width/24)
   return (Math.cos(z)*height/4)
+}
+function fibDraw(){
+  stroke(255)
+  z=(x+width/2)/300
+  return (fibCalc(z)*9-(height/2)+Math.cos(z*120)*20)
 }
