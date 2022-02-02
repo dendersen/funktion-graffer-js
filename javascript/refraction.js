@@ -22,7 +22,6 @@ function CollatzConjectureMid(prepointX,prepointY){
 	let z
 	let mod = 10
 	let distance = 5
-	stroke(0,255,0)
   strokeWeight(1)
 	if(prepointY <= 1){
 		line(prepointX,-(prepointY/mod)+height,prepointX+distance,-(z/mod)+height)
