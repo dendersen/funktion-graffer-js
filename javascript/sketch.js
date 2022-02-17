@@ -29,7 +29,7 @@ function draw() {
     text("please use ctrl and - to zoom out, resolution too low for proper quality",0,0,width,height)
     return
   }
-  // frameRate(15)
+  frameRate(60)
   if(running && x < width/2){
     drawStorage()
     rangeDraw(x+(width/2))
@@ -47,7 +47,8 @@ function draw() {
   }
 }
 
-let topY = 0
+let topPoint = 0
+let longPoint = 0
 
 function drawText(){
   stroke(0)
@@ -55,7 +56,8 @@ function drawText(){
   textSize(height/40)
   text("current x = " + (x+(width/2)) + " / " + width, width-width/5, height/16, width, height/16)
   text("current y = " + (y), width-width/5, (height/16)*2, width, height/16)
-  text("highest point = "+topY, width-width/5, (height/16)*3, width, height/4)
+  text("highest point = " + topPoint, width-width/5, (height/16)*3, width, height/4)
+  text("longest travel = " + longPoint, width-width/5, (height/16)*4, width, height /4)
 }
 const storageY = []
 var running = true
@@ -87,10 +89,10 @@ let inspection = 10
 function rangeDraw(z){
   for(let i = 1; i <= inspection; i++){
     if(z-i<0){
-      console.log (z-i,"end")
+      // console.log (z-i,"end")
       return
     }
-    console.log (z-i)
+    // console.log (z-i)
     stroke(0,255,0,255-((255/inspection)*i))
     CollatzConjectureMid(0,z-i)
   }

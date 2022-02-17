@@ -1,5 +1,10 @@
 function CollatzConjecture(z,n){ 
 	n++; 
+
+	if (z > topPoint) topPoint = z
+
+	if (n > longPoint) longPoint = n
+
 	if(z==1 || z == 0){
 		y=n
 		return
@@ -21,8 +26,9 @@ const collect = []
 function CollatzConjectureMid(prepointX,prepointY){
 	let z
 	let mod = 10
-	let distance = 5
-  strokeWeight(1)
+	let distance = 40
+
+  strokeWeight(2)
 	if(prepointY <= 1){
 		line(prepointX,-(prepointY/mod)+height,prepointX+distance,-(z/mod)+height)
 		done = true
