@@ -79,7 +79,7 @@ function drawStorage (){
   }
 }
 
-let inspection = 10
+let inspection = 15
 
 function rangeDraw(z){
   for(let i = 1; i <= inspection; i++){
@@ -92,3 +92,15 @@ function rangeDraw(z){
     CollatzConjectureMid(0,z-i)
   }
 }
+
+function drawText(){
+  stroke(0)
+  strokeWeight(1)
+  textSize(height/40)
+  text("current x = " + (x+(width/2)) + " / " + width, width-width/5, height/16, width, height/16)
+  text("current y = " + (y), width-width/5, (height/16)*2, width, height/16)
+  text("highest point = " + topPoint, width-width/5, (height/16)*3, width, height/4)
+  text("longest travel = " + longPoint, width-width/5, (height/16)*4, width, height /4)
+}
+const storageY = []
+var running = true

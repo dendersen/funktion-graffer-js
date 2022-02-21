@@ -8,6 +8,7 @@ function button1(){
 }
 
 function openMenu(){
+  modeStore = mode
   mode = "menu"
 }
 
@@ -49,8 +50,10 @@ function openStandard(){
   buttonStandard.hide()
   buttonTree.hide()
   buttonSpecific.hide()
-  x=-width/2
-  background(backgroundShade)
+  if(modeStore != mode){
+    x=-width/2
+    background(backgroundShade)
+  }
 }
 
 function openTree(){
@@ -58,8 +61,10 @@ function openTree(){
   buttonStandard.hide()
   buttonTree.hide()
   buttonSpecific.hide()
-	x=-width/2
-  background(backgroundShade)
+  if(modeStore != mode){
+    x=0
+    background(backgroundShade)
+  }
 }
 
 function openSpecific(){
@@ -67,6 +72,8 @@ function openSpecific(){
   buttonStandard.hide()
   buttonTree.hide()
   buttonSpecific.hide()
-  x=-width/2
-  background(backgroundShade)
+  if(modeStore != mode){
+    x=-width/2
+    background(backgroundShade)
+  }
 }
