@@ -1,3 +1,22 @@
+function standardCollatz() {
+  button1();
+  frameRate(10);
+  if (running && x < width / 2) {
+    drawStorage();
+    rangeDraw(x + (width / 2));
+    stroke(0, 255, 0);
+    CollatzConjectureMid(0, (x + (width / 2)));
+    stroke(0);
+    strokeWeight(width / 3000);
+    strokeWeight(LI);
+    stroke(255, 0, 255);
+    CollatzConjecture(x + (width / 2), 0);
+    pointDraw(x, y);
+    drawText();
+    storageY[x] = y;
+  }
+}
+
 function CollatzConjecture(z,n){ 
 	n++; 
 
@@ -45,4 +64,31 @@ function CollatzConjectureMid(prepointX,prepointY){
 		CollatzConjectureMid(prepointX+distance,z)
 		return
 	}
+}
+
+
+function drawStorage (){
+  background(backgroundShade)
+  stroke(255)
+	strokeWeight(2)
+	line(width-(width/40), height/2, (width/40), height/2)
+  strokeWeight(LI)
+  stroke(255,0,255)
+  for(let i = -(width/2); i < width/2+1; i++) {
+    pointDraw(i,storageY[i])
+  }
+}
+
+let inspection = 10
+
+function rangeDraw(z){
+  for(let i = 1; i <= inspection; i++){
+    if(z-i<0){
+      // console.log (z-i,"end")
+      return
+    }
+    // console.log (z-i)
+    stroke(0,255,0,255-((255/inspection)*i))
+    CollatzConjectureMid(0,z-i)
+  }
 }

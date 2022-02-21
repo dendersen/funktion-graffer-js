@@ -1,13 +1,13 @@
 
 function setup() {
-  if(windowWidth < 1000 && windowHeight < 700){
+  if(windowWidth < 1000 || windowHeight < 700){
     createCanvas(windowWidth-10,windowHeight-10)
     return
   }
 	windowWidth -= 20
 	windowHeight -= 10
 	createCanvas(windowWidth, windowHeight-1);
-	background(80)
+	background(backgroundShade)
   stroke(255)
 	strokeWeight(2)
 	line(width-(width/40), height/2, (width/40), height/2)
@@ -15,12 +15,14 @@ function setup() {
 	x=-width/2
 }
 
+var backgroundShade = 80
+
 var x
 var y
 var LI = 2
 
 function draw() {
-  if(windowWidth < 1000 && windowHeight < 700){
+  if(windowWidth < 1000 || windowHeight < 700){
     if(windowWidth<windowHeight) {
       textSize(windowWidth/10)
     }else {
@@ -29,21 +31,21 @@ function draw() {
     text("please use ctrl and - to zoom out, resolution too low for proper quality",0,0,width,height)
     return
   }
-  frameRate(60)
-  if(running && x < width/2){
-    drawStorage()
-    rangeDraw(x+(width/2))
-    stroke(0,255,0)
-    CollatzConjectureMid(0,(x+(width/2)))
-    stroke(0)
-    strokeWeight(width/3000)
-    strokeWeight(LI)
-    stroke(255,0,255)
-    CollatzConjecture(x+(width/2),0)
-    pointDraw(x,y)
-    drawText()
-    storageY [x] = y
-    x++
+  switch(mode){
+    case "standard":
+      standardCollatz();
+      x++
+    break
+    case "menu":
+      menuChanger()
+    break
+    case "tree":
+      treeCollatz(x+width/2)
+      x++
+    break
+    case "specific":
+      
+    break
   }
 }
 
@@ -70,30 +72,4 @@ function pointDraw(z,d){ //makes a point showing where is currently being drawn
   // point(width/2,-y+height/2)
   // strokeWeight(LI)
   // stroke(0)
-}
-
-function drawStorage (){
-  background(80)
-  stroke(255)
-	strokeWeight(2)
-	line(width-(width/40), height/2, (width/40), height/2)
-  strokeWeight(LI)
-  stroke(255,0,255)
-  for(let i = -(width/2); i < width/2+1; i++) {
-    pointDraw(i,storageY[i])
-  }
-}
-
-let inspection = 10
-
-function rangeDraw(z){
-  for(let i = 1; i <= inspection; i++){
-    if(z-i<0){
-      // console.log (z-i,"end")
-      return
-    }
-    // console.log (z-i)
-    stroke(0,255,0,255-((255/inspection)*i))
-    CollatzConjectureMid(0,z-i)
-  }
 }
