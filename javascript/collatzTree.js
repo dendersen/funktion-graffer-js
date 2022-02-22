@@ -1,12 +1,12 @@
 let length
 
 function treeCollatz(n){
-  length = height/100
+  length = height/300
   frameRate(60)
   stroke(random(255),random(255),random(255))
   strokeWeight(2)
   push()
-  translate(width/2, height/2)
+  translate(width/4, height/4*3)
   line(0,0,0,-length)
   translate(0,-length)
   if(n != 1) treeCollatzref(collatzMath(n))
@@ -31,8 +31,8 @@ function collatzMath(n){
 }
 
 function angels(n){
-  if (collatzCheck(n)) return (radians(5))
-  else return (radians(355))
+  if (collatzCheck(n)) return (radians(355))
+  else return (radians(10))
 }
 
 function collatzCheck(n){//no mater what thies is always false for some reason
