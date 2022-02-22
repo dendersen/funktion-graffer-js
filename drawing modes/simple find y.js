@@ -84,8 +84,9 @@ function cos1(CC){
   z=x/(width/24)
   return (Math.cos(z)*height/4)
 }
+
 function fibDraw(){
   stroke(255)
-  z=(x+width/2)/350
-  return (((fibCalc(z)*9-(height/2)+Math.cos(z*120)*20)/(z/10)))
+  z = (x+(width/2))/80
+  return ((fibCalc(z/2))/10-height/2)
 }
