@@ -2,6 +2,7 @@ var menuOpen
 
 function button1(){
   menuOpen = createButton("menu")
+  menuOpen.style("font-size", buttonMath(true))
   menuOpen.size(width/16, height/16)
   menuOpen.position(0, 0)
   menuOpen.mousePressed(openMenu)
@@ -18,7 +19,8 @@ var buttonSpecific
 
 var mode = "standard"
 
-function buttonMath(){
+function buttonMath(hello){
+  if (hello) return(String(width/46+"px"))
   return(String(width/23+"px"))
 }
 
@@ -46,6 +48,7 @@ function menuChanger(){
 }
 
 function openStandard(){
+  pickPoint.hide()
   mode = "standard"
   buttonStandard.hide()
   buttonTree.hide()
@@ -57,6 +60,7 @@ function openStandard(){
 }
 
 function openTree(){
+  pickPoint.hide()
   mode = "tree"
   buttonStandard.hide()
   buttonTree.hide()
@@ -73,6 +77,7 @@ function openSpecific(){
   buttonTree.hide()
   buttonSpecific.hide()
   if(modeStore != mode){
+    first = true
     x=-width/2
     background(backgroundShade)
   }

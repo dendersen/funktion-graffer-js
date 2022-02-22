@@ -1,9 +1,6 @@
 
 function setup() {
-  if(windowWidth < 1000 || windowHeight < 700){
-    createCanvas(windowWidth-10,windowHeight-10)
-    return
-  }
+  createCanvas(windowWidth-10,windowHeight-10)
 	windowWidth -= 20
 	windowHeight -= 10
 	createCanvas(windowWidth, windowHeight-1);
@@ -13,6 +10,7 @@ function setup() {
 	line(width-(width/40), height/2, (width/40), height/2)
 	y=-height/2
 	x=-width/2
+  specificSetup()
 }
 
 var backgroundShade = 80
@@ -22,8 +20,8 @@ var y
 var LI = 2
 
 function draw() {
-  if(windowWidth < 1000 || windowHeight < 700){
-    if(windowWidth<windowHeight) {
+  if(width < 1000 || height < 700){
+    if(width<height) {
       textSize(windowWidth/10)
     }else {
       textSize(windowHeight/10)
@@ -44,7 +42,7 @@ function draw() {
       x++
     break
     case "specific":
-      
+      specificCollatz()
     break
   }
 }

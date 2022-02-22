@@ -31,10 +31,10 @@ function collatzMath(n){
 }
 
 function angels(n){
-  if (collatzCheck(n)) return (radians(355))
+  if (collatzCheck(n)) return (radians(354))
   else return (radians(10))
 }
 
-function collatzCheck(n){//no mater what thies is always false for some reason
+function collatzCheck(n){
   if(n % 2 == 0) return true
 }
