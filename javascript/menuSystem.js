@@ -56,6 +56,8 @@ function openStandard(){
   if(modeStore != mode){
     x=-width/2
     background(backgroundShade)
+    for(let i = -(width/2); i < width/2+1; i++)
+    storageY [i] = undefined
   }
 }
 

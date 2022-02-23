@@ -74,7 +74,7 @@ function drawStorage (){
 	line(width-(width/40), height/2, (width/40), height/2)
   strokeWeight(LI)
   stroke(255,0,255)
-  for(let i = -(width/2); i < width/2+1; i++) {
+  for(let i = -(width/2); i < x+2; i++) {
     pointDraw(i,storageY[i])
   }
 }
