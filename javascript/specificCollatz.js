@@ -1,16 +1,19 @@
 let first = true
 
 function specificCollatz(){
-  if (first){ 
-    pickPoint.show()
-    first = false
+  pickPoint.show()
+  try{
+    CollatzConjectureMid(int(pickPoint.value()) + (width / 2), 0)
+  }catch(err){
+    console.log("empty")
   }
 }
+
 
 var pickPoint
 
 function specificSetup(){
-  pickPoint = createInput("number to inspect", "number")
+  pickPoint = createInput("1", "number")
   pickPoint.position(width/2-10, 0)
   pickPoint.style("width",width/2-height/40+"px")
   pickPoint.style("height",height/16+"px")
