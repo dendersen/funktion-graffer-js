@@ -1,4 +1,3 @@
-
 function setup() {//setup for standard view style
   createCanvas(windowWidth-10,windowHeight-10)
 	background(backgroundShade) //sets the background coller to a neutral grey
@@ -49,10 +48,4 @@ let longPoint = 0
 
 function pointDraw(z,d){ //makes a point showing where is currently being drawn
   point(z+width/2,-d+height/2)
-  
-  // draws lines on x and y for drawn point
-  // point(x+width/2,height/2)
-  // point(width/2,-y+height/2)
-  // strokeWeight(LI)
-  // stroke(0)
 }
