@@ -7,6 +7,7 @@ function setup() {//setup for standard view style
 	y=-height/2
 	x=-width/2 // preps for first point as, x and y are calculated like a standard coordinate system instead of origin being in the top left corner
   specificSetup() // preps a slider for specific setup
+  button1();//draws the menu button
 }
 
 var backgroundShade = 80 //chooses the shade of white that will be used for the background everywhere
@@ -25,7 +26,7 @@ function draw() {
     text("please use ctrl and - to zoom out, resolution too low for proper quality",0,0,width,height)
     return
   }
-  switch(mode){ // runs the appropriet code for the mode currently in use
+  switch(mode){ // runs the appropriet code for the mode currently picked by the user
     case "standard":
       standardCollatz();
       x++
