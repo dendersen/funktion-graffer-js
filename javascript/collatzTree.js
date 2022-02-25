@@ -9,7 +9,7 @@ function treeCollatz(n){//draws the collatz tree
   translate(width/4, height/4*3)//moves the point considered 0,0
   line(0,0,0,-length) //draws the stem of the tree
   translate(0,-length)//moves the 0,0 to the end of the stem
-  treeCollatzref(collatzMath(n))//starts the 
+  treeCollatzref(collatzMath(n))//starts the drawing 
   pop()
 }
 
