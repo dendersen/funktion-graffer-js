@@ -58,6 +58,8 @@ function openStandard(){
     background(backgroundShade)
     for(let i = -(width/2); i < width/2+1; i++)
     storageY [i] = undefined
+    longPoint = 0
+    topPoint = 0
   }
 }
 
