@@ -17,10 +17,6 @@ function standardCollatz() {//the code that draws the first menu option and the 
 function CollatzConjecture(z,n){  
 	n++; 
 
-  //saves for text
-	if (z > topPoint) topPoint = z
-	if (n > longPoint) longPoint = n
-
   //stops code
 	if(z==1 || z == 0){
 		y=n
@@ -41,10 +37,15 @@ function CollatzConjecture(z,n){
 
 const collect = []
 
-function CollatzConjectureMid(prepointX,prepointY){
+function CollatzConjectureMid(prepointX,prepointY,n){
 	let z
 	let mod = 10//decreases the hight of spikes so that the intire graf can be visible
 	let distance = 40// the distance that will be moved on every step taken
+  if(n) n++
+  else n = 1
+
+    //saves for text
+	if (n > longPoint) longPoint = n
 
   //draws the lines between the difrent values of the steps
   //and calculates the values of each steps
@@ -55,13 +56,15 @@ function CollatzConjectureMid(prepointX,prepointY){
 	}
 	if(prepointY%2 != 0){
 		z = (3*prepointY)+1
+    if (z > topPoint) topPoint = z //saves for text
 		line(prepointX,-(prepointY/mod)+height,prepointX+distance,-(z/mod)+height)
-		CollatzConjectureMid(prepointX+distance,z)
+		CollatzConjectureMid(prepointX+distance,z,n)
 		return
 	}else{
 		z = prepointY/2
+    if (z > topPoint) topPoint = z //saves for text
 		line(prepointX,-(prepointY/mod)+height,prepointX+distance,-(z/mod)+height)
-		CollatzConjectureMid(prepointX+distance,z)
+		CollatzConjectureMid(prepointX+distance,z,n)
 		return
 	}
 }
@@ -93,14 +96,19 @@ function rangeDraw(z){ //draws previusly made grafs
   }
 }
 
-function drawText(){//draws text to tell you about the results
+function drawText(CC){//draws text to tell you about the results
   stroke(0)
   strokeWeight(1)
   textSize(height/40)
-  text("current x = " + (x+(width/2)) + " / " + width, width-width/5, height/16, width, height/16)
-  text("current y = " + (y), width-width/5, (height/16)*2, width, height/16)
-  text("highest point = " + topPoint, width-width/5, (height/16)*3, width, height/4)
-  text("longest travel = " + longPoint, width-width/5, (height/16)*4, width, height /4)
+  if(!CC){
+    text("current x = " + (x+(width/2)) + " / " + width, width-width/5, height/16, width, height/16)
+    text("current y = " + (y), width-width/5, (height/16)*2, width, height/16)
+    text("highest point = " + topPoint, width-width/5, (height/16)*3, width, height/4)
+    text("longest travel = " + longPoint, width-width/5, (height/16)*4, width, height /4)
+    return
+  }
+  text("highest point = " + topPoint, 0, (height/16)*3, 0+width/5, height/4)
+  text("longest travel = " + longPoint, 0, (height/16)*4, 0+width/5, height /4)
 }
 const storageY = []
 var running = true
