@@ -6,7 +6,6 @@ function treeV2(n){//draws the collatz tree
   push()//remembers current settings
   translate(width/4, height/4*3)//moves the point considered 0,0
   treeV2ref(collatzMath(n))//starts the drawing 
-  console.log(x)
 }
 
 function treeV2ref(n) {//draws the branches of the tree

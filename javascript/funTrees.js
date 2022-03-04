@@ -2,7 +2,7 @@ function TRI(n,CC){//draws the collatz tree
   length = height/100
   frameRate(60)
   stroke(255,0,0) //gets a random color
-  strokeWeight(LI)
+  strokeWeight(LI/2)
   push()//remembers current settings
   translate(width/2, height/2)//moves the point considered 0,0
   treeFunref(collatzMath(n),CC)//starts the drawing 
