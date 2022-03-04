@@ -9,7 +9,7 @@ function TRI(n,CC){//draws the collatz tree
 }
 
 function treeFunref(n,CC) {//draws the branches of the tree
-  if(n > 1) treeFunref(collatzMath(n)/* calculates the next value*/ )
+  if(n > 1) treeFunref(collatzMath(n)/* calculates the next value*/,CC )
   push()
   rotate(angelsFun(n,CC)/*calculates the angel that the branch rotates based on the vurrent value*/)
   line(0,0,0,-length)
