@@ -14,8 +14,11 @@ function openMenu(){
 }
 
 var buttonStandard
-var buttonTree
+var buttonTreeV2
 var buttonSpecific
+var buttonTree
+var buttonTriangels //120
+var buttonhexagons //60
 
 var mode = "standard"
 
@@ -27,32 +30,62 @@ function buttonMath(hello){
 function menuChanger(){
   console.log("work")
   buttonStandard = createButton("standard view")
-  buttonTree = createButton("tree view")
+  buttonTreeV2 = createButton("treeV2 view")
   buttonSpecific = createButton("inspect singel")
+  buttonTree = createButton("Tree view")
+  buttonTriangels = createButton("triangels")
+  buttonhexagons = createButton("hexagons")
 
   buttonStandard.style("font-size", buttonMath())
-  buttonTree.style("font-size", buttonMath())
+  buttonTreeV2.style("font-size", buttonMath())
   buttonSpecific.style("font-size",buttonMath())
+  buttonTree.style("font-size", buttonMath())
+  buttonTriangels.style("font-size", buttonMath())
+  buttonhexagons.style("font-size", buttonMath())
 
   buttonStandard.size(width/4, height/4)
-  buttonTree.size(width/4, height/4)
+  buttonTreeV2.size(width/4, height/4)
   buttonSpecific.size(width/4, height/4)
+  buttonTree.size(width/4, height/4)
+  buttonTriangels.size(width/4, height/4)
+  buttonhexagons.size(width/4, height/4)
 
   buttonStandard.position(0, 0)
-  buttonTree.position(0, height/3)
+  buttonTreeV2.position(0, height/3)
   buttonSpecific.position(0, height/3*2)
+  buttonTree.position(width/4, 0)
+  buttonTriangels.position(width/4, height/3)
+  buttonhexagons.position(width/4, height/3*2)
 
   buttonStandard.mousePressed(mode = openStandard)
-  buttonTree.mousePressed(mode = openTree)
+  buttonTreeV2.mousePressed(mode = openTreeV2)
   buttonSpecific.mousePressed(mode = openSpecific)
+  buttonTree.mousePressed(mode = openTree)
+  buttonTriangels.mousePressed(mode = openTri)
+  buttonhexagons.mousePressed(mode = openHex)
+}
+
+function openTri(){
+  buttonHide()
+  mode = "treeTri"
+  if(modeStore != mode){
+    x=0
+    background(backgroundShade/2)
+  }
+}
+
+function openHex(){
+  buttonHide()
+  mode = "treeHex"
+  if(modeStore != mode){
+    x=0
+    background(backgroundShade/2)
+  }
 }
 
 function openStandard(){
-  pickPoint.hide()
+  buttonHide()
   mode = "standard"
-  buttonStandard.hide()
-  buttonTree.hide()
-  buttonSpecific.hide()
   if(modeStore != mode){
     x=-width/2
     background(backgroundShade)
@@ -63,12 +96,18 @@ function openStandard(){
   }
 }
 
+function openTreeV2(){
+  buttonHide()
+  mode = "treeV2"
+  if(modeStore != mode){
+    x=0
+    background(backgroundShade/2)
+  }
+}
+
 function openTree(){
-  pickPoint.hide()
+  buttonHide()
   mode = "tree"
-  buttonStandard.hide()
-  buttonTree.hide()
-  buttonSpecific.hide()
   if(modeStore != mode){
     x=0
     background(backgroundShade)
@@ -76,13 +115,24 @@ function openTree(){
 }
 
 function openSpecific(){
+  buttonHide(true)
   mode = "specific"
-  buttonStandard.hide()
-  buttonTree.hide()
-  buttonSpecific.hide()
   if(modeStore != mode){
     first = true
     x=-width/2
     background(backgroundShade)
+  }
+}
+
+function buttonHide(CC){
+  buttonStandard.hide()
+  buttonTree.hide()
+  buttonSpecific.hide()
+  buttonTreeV2.hide()
+  buttonTriangels.hide()
+  buttonhexagons.hide()
+  if(!CC) {
+    pickPoint.hide()
+    savePoint.hide()
   }
 }

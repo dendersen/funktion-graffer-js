@@ -16,7 +16,9 @@ var x
 var y
 var LI = 2 //determins the standerd line size for all lines or points used in the project
 
+let z
 function draw() {
+  z = new Date().getTime()
   if(width < 1000 || height < 700){ // spits out a visible error of the screen is too small for the project
     if(width<height) {
       textSize(windowWidth/10)
@@ -34,14 +36,27 @@ function draw() {
     case "menu":
       menuChanger()
     break
-    case "tree":
-      treeCollatz(x)
+    case "treeV2":
+      treeV2(x)
       x++
     break
     case "specific":
       specificCollatz()
     break
+    case "tree":
+      treeCollatz(x)
+      x++
+    break
+    case "treeTri":
+      TRI(x,true)
+      x++
+    break
+    case "treeHex":
+      TRI(x,false)
+      x++
+    break
   }
+  console.log(new Date().getTime()-z)
 }
 
 let topPoint = 0
